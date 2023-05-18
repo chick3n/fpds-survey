@@ -1,0 +1,23 @@
+html, body, #root {
+  height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+button.locale {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1em;
+  padding: 4px 10px;
+  border-radius: 5px;
+}
+
+button.locale:hover {
+  background-color: #eee !important
+}
