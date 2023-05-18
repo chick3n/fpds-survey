@@ -9,6 +9,7 @@ import "survey-core/survey.i18n";
 
 import { json as SurveyJson } from './Survey'
 import './App.css'
+import env from "react-dotenv";
 
 // const SURVEY_ID = 1;
 
@@ -74,7 +75,7 @@ function App() {
 }
 
 function saveSurveyResults(url, json) {
-  fetch(url, {
+  fetch(env.API_URL + url, {
       method: 'POST',
       headers: {
         "Content-Type": "application/json"
