@@ -50,9 +50,15 @@ export const json = {
       "maxLength": 32
      },
      {
-      "type": "html",
-      "name": "text1",
-      "html": "Thank you for taking the time to participate in the subject matter expert questionnaire for the\nForeign Policy and Diplomacy Service (FPDS) staffing model. Your responses will be converted into\ndata for the FPDS multilateral staffing model to guide and support FPDS staffing decisions.\n<br/></br>\nThe FPDS position works to advance Canadian interests with a focus on the following seven Core Services:\nInformation and Analysis, Policy Development, Policy Integration, Advocacy, Access, Program Delivery,\nVisits Guidance; source: <a href=\"https://intra.signet.international.gc.ca/foreign_affairs-affaires_etrangeres/poli_diplo/index.aspx?lang=eng\" target=\"blank\">Foreign Policy and Diplomacy (international.gc.ca)</a>."
+      "type": "panel",
+      "name": "panel1",
+      "elements": [
+       {
+        "type": "html",
+        "name": "text1",
+        "html": "Thank you for taking the time to participate in the subject matter expert questionnaire for the\nForeign Policy and Diplomacy Service (FPDS) staffing model. Your responses will be converted into\ndata for the FPDS multilateral staffing model to guide and support FPDS staffing decisions.\n<br/></br>\nThe FPDS position works to advance Canadian interests with a focus on the following seven Core Services:\nInformation and Analysis, Policy Development, Policy Integration, Advocacy, Access, Program Delivery,\nVisits Guidance; source: <a href=\"https://intra.signet.international.gc.ca/foreign_affairs-affaires_etrangeres/poli_diplo/index.aspx?lang=eng\" target=\"blank\">Foreign Policy and Diplomacy (international.gc.ca)</a>."
+       }
+      ]
      },
      {
       "type": "boolean",
