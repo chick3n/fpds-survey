@@ -51,7 +51,7 @@ function App() {
     });
 
     survey.onComplete.add((sender) => {
-        //deleteSurveyData();
+        deleteSurveyData();
         const data = JSON.stringify(sender.data);
         saveSurveyResults('/save', data)
     });
