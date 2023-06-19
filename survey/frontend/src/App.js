@@ -11,7 +11,7 @@ import { json as SurveyJson } from './Survey'
 import './App.css'
 import env from "react-dotenv";
 
-// const SURVEY_ID = 1;
+const SURVEY_ID = 1;
 
 function Locale({survey}) {
   const [locale, setLocale] = useState("en");
@@ -39,6 +39,7 @@ function App() {
     function saveSurveyData (survey) {
         const data = survey.data;
         data.pageNo = survey.currentPageNo;
+        data.surveyId = SURVEY_ID;
         window.localStorage.setItem(storageItemKey, JSON.stringify(data));
     }
 
@@ -61,8 +62,12 @@ function App() {
     if (prevData) {
         const data = JSON.parse(prevData);
         survey.data = data;
-        if (data.pageNo) {
+        if(prevData.surveyId !== SURVEY_ID) {
+          deleteSurveyData();
+        } else {
+          if (data.pageNo) {
             survey.currentPageNo = data.pageNo;
+          }
         }
     }
 

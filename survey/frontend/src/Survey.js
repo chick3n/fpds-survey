@@ -17,6 +17,7 @@ export const json = {
       "name": "mission",
       "title": "Multilateral Mission",
       "titleLocation": "left",
+      "description": "Please choose the mission code",
       "hideNumber": true,
       "isRequired": true,
       "choices": [
@@ -45,6 +46,7 @@ export const json = {
       "name": "code",
       "title": "Enter Code",
       "titleLocation": "left",
+      "description": "A secret code has been assigned to the mission. Please enter the code",
       "hideNumber": true,
       "isRequired": true,
       "maxLength": 32
@@ -56,20 +58,33 @@ export const json = {
        {
         "type": "html",
         "name": "text1",
-        "html": "Thank you for taking the time to participate in the subject matter expert questionnaire for the\nForeign Policy and Diplomacy Service (FPDS) staffing model. Your responses will be converted into\ndata for the FPDS multilateral staffing model to guide and support FPDS staffing decisions.\n<br/></br>\nThe FPDS position works to advance Canadian interests with a focus on the following seven Core Services:\nInformation and Analysis, Policy Development, Policy Integration, Advocacy, Access, Program Delivery,\nVisits Guidance; source: <a href=\"https://intra.signet.international.gc.ca/foreign_affairs-affaires_etrangeres/poli_diplo/index.aspx?lang=eng\" target=\"blank\">Foreign Policy and Diplomacy (international.gc.ca)</a>."
+        "html": "<p>Thank you for taking the time to participate in the subject matter expert questionnaire for the footprint assessment model of the Foreign Policy and Diplomacy Service (FPDS). \n</p>\n<p>\nAs part of a broader effort to support evidence-based decision-making regarding Canada’s footprint of missions abroad, GAC has begun to develop a tool to help assess the footprint FPDS officers abroad. Ideally, this tool would compare the overall cost required to have each FPDS position abroad with the results achieved by the officer; in reality, a lack of data regarding results achieved impedes such an analysis. While data contained in Strategia is of increasing use—and will soon be complemented by data gathered by the new client management system ECHO—there is currently no other way to gather data linking results achieved by FPDS officers than by directly asking mission managers. This is the intent of the questionnaire below.  \n</p>\n<p>\nThe FPDS tool combines data gathered from the questionnaire, together with the number of FPDS officers at a particular mission, to optimize the number of FPDS officers compared with their cost. The tool’s output is intended to foster discussion among subject-matter experts and senior management; it is only one element for consideration of the governance structure ultimately responsible for making footprint decisions.  \n</p>\n<p>\nThe questionnaire below is divided into two main sections: mission-level and officer-level. The mission-level questions are intended to determine the relative priority of FPDS core services delivered by the mission, as well as the number (and level) of officers responsible for that work. The officer-level questions are intended to break down the amount of time spent on each core service by each officer. \n</p>\n<p>\nYour responses will be converted into data for the FPDS multilateral footprint assessment model to guide and support decisions on the placement of FPDS positions at missions abroad. \n</p>\n"
+       }
+      ]
+     },
+     {
+      "type": "panel",
+      "name": "panel3",
+      "elements": [
+       {
+        "type": "html",
+        "name": "question9",
+        "html": "<h2>Part A: Mission-Level Questions </h2>\n\nThe FPDS position works to advance Canadian interests with a focus on the following seven Core Services: Information and Analysis, Policy Development, Policy Integration, Advocacy, Access, Program Delivery, Visits Guidance; source: <a href=\"https://intra.signet.international.gc.ca/foreign_affairs-affaires_etrangeres/poli_diplo/index.aspx?lang=eng\">Foreign Policy and Diplomacy (international.gc.ca) . </a> "
        }
       ]
      },
      {
       "type": "boolean",
       "name": "question1",
-      "title": "Are there other core services FPDS officers perform at this multilateral mission?",
+      "title": "Are there any core FPDS services performed by permanent CBS FPDS officers at this multilateral mission? ",
+      "description": "If the answer is positive, the domain experts in the HQ will contact you.  ",
       "isRequired": true
      },
      {
       "type": "matrix",
       "name": "question2",
       "title": "Please identify the importance of each core service at this multilateral mission",
+      "description": "The model assigns a priority level to each core service using the scale of: \"Very Low\"= 0-20, \"Low\": 20-40, \"Medium\": 40-60, \"High\":60-80, \"Very High\": 80-100. These priority designations represent the relative significance of each core service within the scope of the mission. However, they should not be misconstrued as directives for the allocation of resources based solely on high-priority ratings. To ensure a balanced and equitable approach, irrespective of the individual priority scores, the model normalizes the sum of all priorities within any given mission to unity. In other words, choosing high priority will not lead to a higher staffing level, and choosing low priority will not lead to a lower staffing level.",
       "isRequired": true,
       "columns": [
        "Very Low",
@@ -155,7 +170,7 @@ export const json = {
      {
       "type": "text",
       "name": "question5",
-      "title": "What is the total count of Full-Time Equivalent (FTE) positions for Non-FPDS CBS officers performing\nFPDS core services?",
+      "title": "What is the total count of Full-Time Equivalent (FTE) positions for Non-FPDS CBS officers performing FPDS core services?",
       "isRequired": true,
       "inputType": "number",
       "min": 0,
@@ -165,9 +180,11 @@ export const json = {
       "type": "matrixdropdown",
       "name": "question6",
       "title": {
-       "default": "Specify the current Full-Time Equivalent (FTE) for each classification of permanent CBS FPDS officers in\nthis mission? Please note that the total should correspond with the figure provided in question 3.",
+       "default": "Specify the current Full-Time Equivalent (FTE) for each classification of permanent CBS FPDS officers in this mission? Please note that the total should correspond with the figure provided in question 3.",
        "fr": "frTell us about the classification and current FTE number of permanent CBS FPDS officers:"
       },
+      "description": "Please note that the total FTE should match with the answer provided in question 3.",
+      "isRequired": true,
       "columns": [
        {
         "name": "FS 01",
@@ -199,6 +216,51 @@ export const json = {
        {
         "name": "FS 04",
         "title": "FS 04",
+        "cellType": "text",
+        "inputType": "number",
+        "min": 0,
+        "max": 100,
+        "step": 1
+       },
+       {
+        "name": "AS 01",
+        "title": "AS 01",
+        "cellType": "text",
+        "inputType": "number",
+        "min": 0,
+        "max": 100,
+        "step": 1
+       },
+       {
+        "name": "AS 02",
+        "title": "AS 02",
+        "cellType": "text",
+        "inputType": "number",
+        "min": 0,
+        "max": 100,
+        "step": 1
+       },
+       {
+        "name": "AS 03",
+        "title": "AS 03",
+        "cellType": "text",
+        "inputType": "number",
+        "min": 0,
+        "max": 100,
+        "step": 1
+       },
+       {
+        "name": "AS 04",
+        "title": "AS 04",
+        "cellType": "text",
+        "inputType": "number",
+        "min": 0,
+        "max": 100,
+        "step": 1
+       },
+       {
+        "name": "AS 05",
+        "title": "AS 05",
         "cellType": "text",
         "inputType": "number",
         "min": 0,
@@ -262,18 +324,35 @@ export const json = {
       ]
      },
      {
+      "type": "html",
+      "name": "question8",
+      "html": "<h2>Part B: Officer-Level Questions </h2>\n\n"
+     },
+     {
       "type": "matrixdynamic",
       "name": "question7",
-      "title": "What percentage of time each permanent CBS FPDS officer has spent on each of their core services over\nthe past year?",
+      "title": "What percentage of time each permanent CBS FPDS officer has spent on each of their core services over the past year?",
       "columns": [
+       {
+        "name": "Officer's name",
+        "title": "Name",
+        "cellType": "text",
+        "isRequired": true
+       },
        {
         "name": "Classification",
         "cellType": "dropdown",
+        "isRequired": true,
         "choices": [
          "FS 01",
          "FS 02",
          "FS 03",
          "FS 04",
+         "AS 01",
+         "As 02",
+         "AS 03",
+         "AS 04",
+         "AS 05",
          "EX 01",
          "EX 02",
          "EX 03",
@@ -288,6 +367,7 @@ export const json = {
          "fr": "frService 1: Information & Analysis"
         },
         "cellType": "text",
+        "isRequired": true,
         "inputType": "number",
         "min": 0,
         "max": 100,
@@ -300,6 +380,7 @@ export const json = {
          "fr": "frService 2: Policy Development"
         },
         "cellType": "text",
+        "isRequired": true,
         "inputType": "number",
         "min": 0,
         "max": 100,
@@ -312,6 +393,7 @@ export const json = {
          "fr": "frService 3: Policy Integration"
         },
         "cellType": "text",
+        "isRequired": true,
         "inputType": "number",
         "min": 0,
         "max": 100,
@@ -324,6 +406,7 @@ export const json = {
          "fr": "frService 4: Advocacy"
         },
         "cellType": "text",
+        "isRequired": true,
         "inputType": "number",
         "min": 0,
         "max": 100,
@@ -336,6 +419,7 @@ export const json = {
          "fr": "frService 5: Access"
         },
         "cellType": "text",
+        "isRequired": true,
         "inputType": "number",
         "min": 0,
         "max": 100,
@@ -348,6 +432,7 @@ export const json = {
          "fr": "frService 6: Program Delivery"
         },
         "cellType": "text",
+        "isRequired": true,
         "inputType": "number",
         "min": 0,
         "max": 100,
@@ -360,77 +445,13 @@ export const json = {
          "fr": "frService 7: Visits"
         },
         "cellType": "text",
+        "isRequired": true,
         "inputType": "number",
         "min": 0,
         "max": 100,
         "step": 1
        }
-      ],
-      "rowCount": 5
-     },
-     {
-      "type": "panel",
-      "name": "panel2",
-      "elements": [
-       {
-        "type": "html",
-        "name": "text3",
-        "html": "a) Please identify the positions (by their numerical identifiers) within this service that need to be staffed concurrently in order to effectively contribute to this task. For instance, if the Full-Time Equivalent (FTE) of position #1 should be twice that of position #2 in this task, then notate it as (#1)=2(#2) (indicating a twinning relation). <b>(twinning relation).</b>\n<br/><br/>\nb) Please specify the positions (identified by their numbers) within this service that need to be filled for successful task execution. For instance, if the Full-Time Equivalent (FTE) of position #3 needs to be more than twice that of position #4 in this task, you would represent this as (#3) - 2*(#4) &gt; 0. <b>(supervisory relation).</b>\n<br/><br/>\nc) Express any other relation that exists in staffing to provide this service in the mission <b>(Miscellaneous relation)</b>"
-       },
-       {
-        "type": "matrixdropdown",
-        "name": "question8",
-        "titleLocation": "hidden",
-        "columns": [
-         {
-          "name": "twinning_relation",
-          "title": "Twinning relation",
-          "cellType": "text"
-         },
-         {
-          "name": "supervisory_relation",
-          "title": "Supervisory relation",
-          "cellType": "text"
-         },
-         {
-          "name": "miscellaneous_relation",
-          "title": "Miscellaneous relation",
-          "cellType": "text"
-         }
-        ],
-        "rows": [
-         {
-          "value": "Core service 1",
-          "text": "Core service 1: Information Analysis"
-         },
-         {
-          "value": "Core service 2",
-          "text": "Core service 2: Policy Development"
-         },
-         {
-          "value": "Core service 3",
-          "text": "Core service 3: Policy Integration"
-         },
-         {
-          "value": "Core service 4",
-          "text": "Core service 4: Advocacy"
-         },
-         {
-          "value": "Core service 5",
-          "text": "Core service 5: Access"
-         },
-         {
-          "value": "Core service 6",
-          "text": "Core service 6: Program Delivery"
-         },
-         {
-          "value": "Core service 7",
-          "text": "Core service 7: Visits Guidance"
-         }
-        ]
-       }
-      ],
-      "title": "8. Relations"
+      ]
      }
     ],
     "description": {
