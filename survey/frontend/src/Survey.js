@@ -76,7 +76,7 @@ export const json = {
      {
       "type": "boolean",
       "name": "question1",
-      "title": "Are there any core FPDS services performed by permanent CBS FPDS officers at this multilateral mission? ",
+      "title": "Do permanent CBS FPDS officers at this multilateral mission perform any services in addition to the FPDS seven core services?",
       "description": "If the answer is positive, the domain experts in the HQ will contact you.  ",
       "isRequired": true
      },
@@ -332,17 +332,16 @@ export const json = {
       "type": "matrixdynamic",
       "name": "question7",
       "title": "What percentage of time each permanent CBS FPDS officer has spent on each of their core services over the past year?",
+      "isRequired": true,
       "columns": [
        {
         "name": "Officer's name",
-        "title": "Name",
-        "cellType": "text",
-        "isRequired": true
+        "title": "Name of incumbent",
+        "cellType": "text"
        },
        {
         "name": "Classification",
         "cellType": "dropdown",
-        "isRequired": true,
         "choices": [
          "FS 01",
          "FS 02",
@@ -367,7 +366,6 @@ export const json = {
          "fr": "frService 1: Information & Analysis"
         },
         "cellType": "text",
-        "isRequired": true,
         "inputType": "number",
         "min": 0,
         "max": 100,
@@ -380,7 +378,6 @@ export const json = {
          "fr": "frService 2: Policy Development"
         },
         "cellType": "text",
-        "isRequired": true,
         "inputType": "number",
         "min": 0,
         "max": 100,
@@ -393,7 +390,6 @@ export const json = {
          "fr": "frService 3: Policy Integration"
         },
         "cellType": "text",
-        "isRequired": true,
         "inputType": "number",
         "min": 0,
         "max": 100,
@@ -406,7 +402,6 @@ export const json = {
          "fr": "frService 4: Advocacy"
         },
         "cellType": "text",
-        "isRequired": true,
         "inputType": "number",
         "min": 0,
         "max": 100,
@@ -419,7 +414,6 @@ export const json = {
          "fr": "frService 5: Access"
         },
         "cellType": "text",
-        "isRequired": true,
         "inputType": "number",
         "min": 0,
         "max": 100,
@@ -432,7 +426,6 @@ export const json = {
          "fr": "frService 6: Program Delivery"
         },
         "cellType": "text",
-        "isRequired": true,
         "inputType": "number",
         "min": 0,
         "max": 100,
@@ -445,7 +438,6 @@ export const json = {
          "fr": "frService 7: Visits"
         },
         "cellType": "text",
-        "isRequired": true,
         "inputType": "number",
         "min": 0,
         "max": 100,
